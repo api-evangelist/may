@@ -1,0 +1,28 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.may.app/page-sitemap.xml
+limit_count: 0
+note: >-
+  HONEST ZERO. May publishes no API, therefore no rate limits, no throttling policy and no
+  rate-limit response headers. There are no developer docs to search: the full published page
+  inventory (51 pages across three locales, read from the Rank Math sitemap) contains no
+  developer, documentation, reference or API page, the Intercom help center has seven
+  collections and none of them is technical/developer-facing, and every API-discovery path
+  probed on every host returned 404. No apis.yml RateLimits pointer is emitted, since the
+  underlying thing is not present.
+limits: []
+headers: []
+evidence:
+- url: https://www.may.app/page-sitemap.xml
+  status: 200
+  note: Complete published page list; no developer or API documentation page exists.
+- url: https://www.may.app/api
+  status: 404
+- url: https://www.may.app/docs
+  status: 404
+- url: https://intercom.help/may-fdff94332145/fr/
+  status: 200
+  note: >-
+    Help center. Collections are: using the app, payment and billing, my account, Mya (the AI
+    medical assistant), medical messaging (France only), technical troubleshooting, and
+    health professionals / press / partnerships. No API, integration or data-export section.

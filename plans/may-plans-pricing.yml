@@ -1,0 +1,31 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.may.app/page-sitemap.xml
+plan_count: 0
+note: >-
+  HONEST ZERO. May publishes no API and therefore no API plans, and it publishes no price
+  list on its website either. The full published page inventory was read from the Rank Math
+  sitemap (51 pages across fr/en/es: home, features, mission, scientific committee, medical
+  team, studies, newsletters, gift card, employer offer, pro community, legal notices and
+  campaign landing pages) and none of them is a pricing or plans page. Consumer subscription
+  pricing exists but is quoted only inside the App Store / Google Play listings (third-party
+  press reports it from about £4.99 / month, with some features free — not captured here
+  because May does not publish the figure itself). The gift-card page describes choosing a
+  subscription formula but shows no price and hands off to a Typeform
+  (maysante.typeform.com). The employer offer is a contact-form sales motion with an ROI
+  claim (108€ returned per 100€ invested) and no published tiers. No apis.yml Plans pointer
+  is emitted, since the underlying thing is not present.
+plans: []
+evidence:
+- url: https://www.may.app/page-sitemap.xml
+  status: 200
+  note: Complete published page list; no /pricing, /tarifs or /plans page exists in any locale.
+- url: https://www.may.app/carte-cadeau-may/
+  status: 200
+  note: >-
+    Gift-card page. Says "Choisissez la formule d'abonnement" but publishes no price,
+    duration or currency; the CTA leaves the site for maysante.typeform.com.
+- url: https://www.may.app/offre-entreprises/
+  status: 200
+  note: >-
+    B2B employer offer. Contact form only — no tiers, no per-seat price, no published quota.

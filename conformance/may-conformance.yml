@@ -1,0 +1,67 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.may.app/politique-de-confidentialite/
+note: >-
+  May publishes no machine-readable API contract, so none of the OpenAPI-derived standards
+  checks in this pipeline (oauth2, oidc, rfc9457, json:api, odata, scim, pagination,
+  idempotency) can be evaluated — they are recorded as unknown rather than false, because
+  "no spec to read" is not the same finding as "the spec does not conform". The regulatory
+  posture below is what the company genuinely states on its own site. Note the HDS nuance:
+  French law requires health data to be hosted by an HDS-certified host, and May's privacy
+  policy names AWS (France) as its HDS-certified Hébergeur de Données de Santé — the
+  certification belongs to AWS, and May does not claim an HDS certification of its own. No
+  SOC 2, ISO 27001, HDS-as-operator, PCI DSS, HIPAA or FedRAMP certification is claimed
+  anywhere on the public site, no trust center exists, and no security.txt is served, so no
+  `Compliance` or `TrustCenter` pointer is emitted.
+standards:
+- id: gdpr
+  conforms: true
+  evidence: >-
+    Privacy policy is written against "Règlement général sur la protection des données
+    n°679/2016" and the French Loi Informatique et Libertés of 6 January 1978 (as amended),
+    names LN CARE SAS as data controller, and routes complaints to the CNIL.
+  source: https://www.may.app/politique-de-confidentialite/
+- id: hds-health-data-hosting
+  conforms: true
+  evidence: >-
+    Privacy policy names Amazon Web Services, hosting in France, as the HDS-certified
+    Hébergeur de Données de Santé for the service. The HDS certification is AWS's, not
+    May's; May's conformance is in its choice of a certified host.
+  source: https://www.may.app/politique-de-confidentialite/
+- id: cnil-supervision
+  conforms: true
+  evidence: CNIL named as the supervisory authority with its complaint portal linked.
+  source: https://www.may.app/politique-de-confidentialite/
+- id: soc2
+  conforms: false
+  evidence: No SOC 2 attestation claimed on the public site; no trust center published.
+- id: iso-27001
+  conforms: false
+  evidence: No ISO 27001 certification claimed on the public site.
+- id: eu-mdr-medical-device
+  conforms: unknown
+  evidence: >-
+    The app delivers messaging with qualified clinicians and editorial health content and
+    does not present itself as a medical device; no CE marking, MDR class or notified body is
+    named anywhere on the site. Whether Mya, the in-app AI medical assistant, falls in scope
+    is not addressed publicly.
+- id: fhir-r4
+  conforms: false
+  evidence: >-
+    No FHIR endpoint, no CapabilityStatement, no /metadata route, no patient-access API. May
+    is a direct-to-consumer support service, not a payer, EHR or care-record holder.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on every host (probed 2026-08-17).
+- id: oauth2
+  conforms: unknown
+  evidence: No published API or OpenAPI securitySchemes to evaluate.
+- id: oidc
+  conforms: unknown
+  evidence: /.well-known/openid-configuration returns 404 on every host.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No published API contract to evaluate.
+- id: rfc8594-sunset-header
+  conforms: unknown
+  evidence: No published API, no versioning policy and no deprecation policy.

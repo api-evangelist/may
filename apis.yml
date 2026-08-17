@@ -1,10 +1,24 @@
 aid: may
 name: May
-description: 'May is a company surfaced as a portfolio company of serena and added to the API Evangelist
-  network as a stub for enrichment. Sector: edtech. This profile is a lead awaiting the enrichment pipeline.'
+image: https://www.may.app/wp-content/uploads/2025/05/logo_may_sapin_fond_transparent.png
+description: 'May is a French digital-health company, operated by LN CARE SAS, whose mobile
+  app supports future and new parents from fertility and pregnancy through the first years
+  of a child''s life. It pairs a medical messaging service staffed by French-qualified
+  midwives, pediatric nurses and doctors — answering questions seven days a week from 8am
+  to 10pm — with an expert-reviewed content library, roughly hour-long audio masterclasses,
+  everyday tracking tools for sleep, feeding and weight, and Mya, an in-app AI medical
+  assistant. Founded in Paris in 2020 by Cécilia Creuzet, Antoine Creuzet and Adrien Brunet,
+  it reported more than 400,000 users and a team of around 80 health professionals, raised
+  €7M in September 2024 to expand into Spain and the United Kingdom, and also sells a
+  parental-support benefit to employers. It was surfaced as a portfolio company of Serena
+  and profiled in the API Evangelist network; it publishes a consumer marketing site, a blog
+  and an Intercom help center, but no public developer program, no API reference and no
+  machine-readable API contract of any kind.'
 url: https://raw.githubusercontent.com/api-evangelist/may/refs/heads/main/apis.yml
 x-type: company
 x-source: serena-portfolio
+x-backed-by:
+- serena
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
@@ -12,7 +26,15 @@ created: '2026-08-17'
 modified: '2026-08-17'
 tags:
 - Company
-- Edtech
+- Health
+- Digital Health
+- Parenting
+- Pregnancy
+- Maternal Health
+- Consumer Health
+- Mobile Application
+- Employee Benefits
+- France
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,5 +42,83 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/may-domain-security.yml
 - type: Website
-  url: https://may-sante.com/
+  url: https://www.may.app/
+- type: About
+  url: https://www.may.app/mission-may/
+- type: Blog
+  url: https://www.may.app/blog/
+- type: BlogRSS
+  url: https://www.may.app/feed/
+- type: Support
+  url: https://intercom.help/may-fdff94332145/fr/
+- type: TermsOfService
+  url: https://www.may.app/cgu/
+- type: PrivacyPolicy
+  url: https://www.may.app/politique-de-confidentialite/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/may-sante/
+- type: Facebook
+  url: https://www.facebook.com/MaySanteParentalite/
+- type: LLMsTxt
+  url: llms/may-llms.txt
+- type: Conformance
+  url: conformance/may-conformance.yml
+x-domain-note: >-
+  may-sante.com (the URL Serena's portfolio profile lists) 301-redirects to
+  https://www.may.app/, which is the canonical marketing host and the one every probe in
+  this profile was run against. Both domains are the company's own. The legal operating
+  entity is LN CARE SAS, 112 avenue de Paris, 94306 Vincennes, France (R.C.S. Créteil
+  879 732 584); contact@may-sante.com.
+x-source-classification-note: >-
+  Serena's own portfolio profile tags May as `edtech` (with `healthtech` secondary), which
+  is how the original stub arrived carrying an Edtech tag. The company's product is a
+  regulated-adjacent consumer health service — medical messaging with qualified perinatal
+  clinicians and health-data hosting on an HDS-certified host — so the tags here are set to
+  digital health / parenting rather than education technology.
+x-enrichment:
+  date: '2026-08-17'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+  note: >-
+    Full STEP 0b contract-discovery pass run against every host: the canonical marketing host
+    (www.may.app), the legacy brand domain (may-sante.com, which 301s to it), the two
+    subdomains found in certificate-transparency logs (capig.may.app, go.may.app — neither
+    resolves), and the guessed api./app./developer./docs. patterns (NXDOMAIN on may.app).
+    Probed for REST OpenAPI/Swagger, GraphQL introspection, MCP tools/list, AsyncAPI and both
+    A2A agent-card paths. No machine-readable contract of any kind exists, no first-party SDK
+    exists on any registry, and there is no GitHub organization. The company was reclassified
+    from the stub's Edtech tag to digital health / parenting.
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    May is a direct-to-consumer mobile health app for parents — the whole public surface is a
+    51-page WordPress marketing site in three locales plus a seven-collection Intercom help
+    center whose only partner-facing section routes health professionals, press and
+    partnerships to an email conversation, and the sole backend hostname in the company's
+    public DNS (capig.may.app, found in certificate-transparency logs) is a dangling CNAME to
+    a deleted AWS Kubernetes ingress load balancer in eu-west-3.
+  evidence:
+  - url: https://www.may.app/openapi.json
+    status: 404
+  - url: https://www.may.app/graphql
+    status: 404
+  - url: https://www.may.app/.well-known/agent-card.json
+    status: 404
+  - url: https://www.may.app/.well-known/agent.json
+    status: 404
+  - url: https://www.may.app/.well-known/security.txt
+    status: 404
+  - url: https://www.may.app/llms.txt
+    status: 404
+  - url: https://www.may.app/page-sitemap.xml
+    status: 200
+  - url: https://www.may.app/wp-json/
+    status: 200
+  - url: https://may-sante.com/
+    status: 301
+  checked: '2026-08-17'
