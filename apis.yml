@@ -1,5 +1,16 @@
 aid: may
 name: May
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.may.app/wp-content/uploads/2025/05/logo_may_sapin_fond_transparent.png
 description: 'May is a French digital-health company, operated by LN CARE SAS, whose mobile
   app supports future and new parents from fertility and pregnancy through the first years
