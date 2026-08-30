@@ -2,6 +2,20 @@
   "repo": "may",
   "feeds": [
     {
+      "source": "https://www.may.app/mission-may/feed/",
+      "feed_url": "https://www.may.app/mission-may/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.may.app/blog/blog/feed/",
+      "feed_url": "https://www.may.app/blog/blog/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://www.may.app/mission-may/",
       "feed_url": "https://www.may.app/mission-may/feed/",
       "title": "",
@@ -17,5 +31,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-08-22T20:20:02Z"
+  "fetched": "2026-08-30T22:33:40Z"
 }
